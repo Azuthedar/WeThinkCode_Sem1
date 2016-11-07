@@ -22,9 +22,9 @@ int			main(int argc, char **argv)
 		ft_putendl("main 1");
 		init_func(e, argv);
 		ft_putendl("main 2");
-		close(e->fd);
-		ft_putendl("main 3");
 		mlx_loop(e->mlx.mlx);
+		ft_putendl("main 3");
+		close(e->fd);
 		ft_putendl("main 4");
 		free(&e);
 	}

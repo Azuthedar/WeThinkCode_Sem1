@@ -12,12 +12,12 @@
 
 #include <fdf.h>
 
-int     check_size(t_env *env)
+int		check_size(t_env *env)
 {
-    int     size;
+	int		size;
 
-    size = 50;
-    while ((env->x * size) > 450 || (env->y * size) > 450)
-        size -= 1;
-    return (size);
+	size = 50;
+	while ((env->x * size) > 450 || (env->y * size) > 450)
+		size -= 1;
+	return (size);
 }

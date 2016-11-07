@@ -44,7 +44,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_atoi(char *s);
+int		ft_atoi(const char *s);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -70,7 +70,7 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s);
 char	**ft_strsplit(const char *s, char c);
-char	*ft_itoa(int n); // NOT IN WORKING CONDITION \ NOT DONE
+char	*ft_itoa(int n);
 
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);

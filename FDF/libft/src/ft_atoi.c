@@ -12,26 +12,42 @@
 
 #include "../includes/libft.h"
 
-int		ft_atoi(char *s)
+static int		ft_isspace(char c)
+{
+	if (c == ' ' ||
+			c == '\n' ||
+			c == '\t' ||
+			c == '\v' ||
+			c == '\f' ||
+			c == '\r')
+	{
+		return (1);
+	}
+	return (0);
+}
+
+int				ft_atoi(const char *str)
 {
 	int		i;
-	int		neg;
-	int		res;
+	int		sign;
+	int		nb;
 
 	i = 0;
-	neg = 1;
-	res = 0;
-	while (s[i] == ' ' || s[i] == '\t')
+	nb = 0;
+	sign = 1;
+	while (ft_isspace(str[i]))
 		i++;
-	if (s[i] == '-')
+	if (str[i] == '-')
 	{
-		neg = -neg;
-	}
-	while (s[i] != '\0')
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-			res = res * 10 + (s[i] - '0');
+		sign = -1;
 		i++;
 	}
-	return (res * neg);
+	else if (str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		nb = nb * 10 + (str[i] - '0') * sign;
+		i++;
+	}
+	return (nb);
 }

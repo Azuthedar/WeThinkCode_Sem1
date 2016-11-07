@@ -34,7 +34,7 @@ OBJ = init.o \
 
 INCLUDES =  -I ./include/
 
-CFLAGS = -Werror -Wextra -Wall -g3
+CFLAGS = -Werror -Wextra -Wall
 
 MLXFL = -lmlx -framework OpenGL -framework AppKit
 
@@ -61,4 +61,8 @@ re: fclean all
 	@echo "Normed all files"
 
 .db: $(NAME)
+	@gcc -g3 -c $(SRC) $(INCLUDES)
+	@echo "Compiled files into OBJ files."
+	@gcc -g3 -o $(NAME) $(OBJ) $(CFLAGS) $(MLXFL) $(INCLUDES) -L libft/ -lft
+	@echo "Compiled files into an EXECUTABLE file."
 	lldb $(NAME)

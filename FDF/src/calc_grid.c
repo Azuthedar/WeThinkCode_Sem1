@@ -18,7 +18,7 @@ void		calc_grid(t_env *e)
 	int			j;
 
 	i = 0;
-	e->gc.s = (char *)malloc(sizeof(BUFFER));
+	e->gc.s = (char *)malloc(BUFFER);
 	read(e->fd, (void *)e->gc.s, BUFFER);
 	while (e->gc.s[i] != '\0')
 	{

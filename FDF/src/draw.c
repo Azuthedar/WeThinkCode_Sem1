@@ -91,7 +91,7 @@ static int			get(t_env *env, char **argv)
 {
 	static char *str = NULL;
 	static int	i = 1;
-	char		result[3];
+	char		result[2];
 
  	if (str == NULL)
 	{
@@ -102,14 +102,14 @@ static int			get(t_env *env, char **argv)
 	{
 		if (str[i - 1] >= 48 && str[i - 1] <= 57 &&
 		(str[i] == ' ' || str[i] == '\n'))
-			return(atoi(&str[i - 1]) * 5);
+			return(ft_atoi(&str[i - 1]) * 5);
 		if ((str[i - 1] >= 48 && str[i - 1] <= 57) && str[i] >= 48 && str[i] <= 57
 		&& (str[i + 1] == ' ' || str[i + 1] == '\n'))
 		{
 			result[0] = str[i - 1];
 			result[1] = str[i];
 			i += 2;
-			return (atoi(result) * 5);
+			return (ft_atoi(result) * 5);
 		}
 	}
 	free(str);

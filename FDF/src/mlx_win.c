@@ -15,4 +15,9 @@
 void		draw_win(t_env *env)
 {
 	env->mlx.win = mlx_new_window(env->mlx.mlx, W, H, "FDF");
+	if (env->mlx.win == NULL)
+	{
+		ft_putendl("Error creating window!");
+		exit(0);
+	}
 }
