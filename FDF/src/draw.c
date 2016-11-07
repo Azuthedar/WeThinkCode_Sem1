@@ -40,6 +40,7 @@ static int			draw_line(t_env *e, int clr, float *v1, float *v2)
 static int			draw_line_v(t_env *e, float *v, float x2, float y2)
 {
 	t_dw_line p2;
+
 	p2.slope = (y2 - v[1]) / (x2 - v[0]);
 	p2.x = v[0];
 	p2.y = v[1];
@@ -89,22 +90,22 @@ static void			draw_square(t_env *env, t_dw_grid p1, int s)
 
 static int			get(t_env *env, char **argv)
 {
-	static char *str = NULL;
-	static int	i = 1;
-	char		result[2];
+	static char		*str = NULL;
+	static int		i = 1;
+	char			result[2];
 
- 	if (str == NULL)
+	if (str == NULL)
 	{
 		str = (char *)malloc(sizeof(char) * BUFFER);
- 		init_file(env, str, argv);
+		init_file(env, str, argv);
 	}
 	while (str[i++] != '\0')
 	{
 		if (str[i - 1] >= 48 && str[i - 1] <= 57 &&
 		(str[i] == ' ' || str[i] == '\n'))
-			return(ft_atoi(&str[i - 1]) * 5);
-		if ((str[i - 1] >= 48 && str[i - 1] <= 57) && str[i] >= 48 && str[i] <= 57
-		&& (str[i + 1] == ' ' || str[i + 1] == '\n'))
+			return (ft_atoi(&str[i - 1]) * 5);
+		if ((str[i - 1] >= 48 && str[i - 1] <= 57) && str[i] >= 48
+			&& str[i] <= 57 && (str[i + 1] == ' ' || str[i + 1] == '\n'))
 		{
 			result[0] = str[i - 1];
 			result[1] = str[i];

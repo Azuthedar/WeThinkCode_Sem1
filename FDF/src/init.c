@@ -12,10 +12,10 @@
 
 #include <fdf.h>
 
-void    init_file(t_env *env, char *str, char **argv)
+void		init_file(t_env *env, char *str, char **argv)
 {
-    env->fd = open(argv[1], O_RDONLY);
-    read(env->fd, (void*)str, BUFFER);
+	env->fd = open(argv[1], O_RDONLY);
+	read(env->fd, (void*)str, BUFFER);
 	if (str[0] <= 48 && str[0] >= 57)
 	{
 		ft_putendl("File is empty!");
@@ -52,3 +52,11 @@ void		init_func(t_env *env, char **argv)
 	mlx_hook(env->mlx.win, 17, 0L, quit, &env->mlx);
 }
 
+void		init_buff(t_env *e, int i)
+{
+	if (e->gc.s[i] == ' ' && e->gc.s[i + 1] == ' ' && e->y == 0)
+		e->x++;
+	if (e->gc.s[i] == ' ' && e->gc.s[i + 1] >= 48 && e->gc.s[i + 1] <= 57
+		&& e->gc.s[i + 2] >= 48 && e->gc.s[i + 2] <= 57 && e->y == 0)
+		e->x++;
+}

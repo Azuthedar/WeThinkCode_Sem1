@@ -23,11 +23,7 @@ void		calc_grid(t_env *e)
 	while (e->gc.s[i] != '\0')
 	{
 		j = 0;
-		if (e->gc.s[i] == ' ' && e->gc.s[i + 1] == ' ' && e->y == 0)
-			e->x++;
-		if (e->gc.s[i] == ' ' && e->gc.s[i + 1] >= 48 && e->gc.s[i + 1] <= 57
-			&& e->gc.s[i + 2] >= 48 && e->gc.s[i + 2] <= 57 && e->y == 0)
-			e->x++;
+		init_buff(e, i);
 		while (e->gc.s[i] == ' ')
 		{
 			j++;

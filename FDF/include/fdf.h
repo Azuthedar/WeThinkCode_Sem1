@@ -90,6 +90,7 @@ typedef struct			s_env
 void					init_func(t_env *env, char **argv);
 void					init_all(t_env *env, char **argv);
 void					init_file(t_env *env, char *str, char **argv);
+void					init_buff(t_env *env, int i);
 void					draw_win(t_env *env);
 void					calc_grid(t_env *e);
 void					draw_grid(t_env *env, char **argv);
